@@ -1,24 +1,21 @@
-# README
+# Book Library API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple api managing publishers books and authors.
 
-Things you may want to cover:
+ERD Diagram
+![Database ERD](/db/ERD.png?raw=true "Database ERD")  
 
-* Ruby version
+* Ruby version  
+2.5.3
 
-* System dependencies
-
-* Configuration
+* Configuration  
+The app uses the postgresql database  
+In config/database.yml enter your username and password
 
 * Database creation
+bin/rails db:create
+bin/rails db:migrate
 
 * Database initialization
+bin/rails db:seed
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
