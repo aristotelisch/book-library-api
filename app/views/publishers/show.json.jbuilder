@@ -1,0 +1,1 @@
+json.call(@publisher, :id, :name, :telephone, :address)

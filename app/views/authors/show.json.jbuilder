@@ -1,0 +1,1 @@
+json.call(@author, :id, :full_name, :email, :date_of_birth)
