@@ -2,20 +2,39 @@
 
 A simple api managing publishers books and authors.
 
-ERD Diagram
+## ERD Diagram  
 ![Database ERD](/db/ERD.png?raw=true "Database ERD")  
 
-* Ruby version  
-2.5.3
+## Configuration
+* Ruby version  `2.5.3`  
 
-* Configuration  
-The app uses the postgresql database  
-In config/database.yml enter your username and password
+* Install necessary gems
+    ```bash
+    bundle install
+    ```
 
-* Database creation
-bin/rails db:create
-bin/rails db:migrate
+
+* Database configuration
+    You need to have installed and running the postgresql database  
+
+    In order to connect to your local database  
+    enter your username and password in `config/database.yml`
+
+* Database setup
+    * Create the databases
+    ```bash
+    `bin/rails db:create`  
+    ```
+    
+    * Run migrations
+    ```bash
+    `bin/rails db:migrate`  
+    ```
 
 * Database initialization
-bin/rails db:seed
+    * Load development (fake) data from db/seeds.rb
+    
+    ```bash
+    bin/rails db:seed
+    ```
 
