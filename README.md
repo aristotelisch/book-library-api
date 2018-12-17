@@ -1,6 +1,6 @@
 # Book Library API
 
-A simple api managing publishers books and authors.
+A simple api to manage publishers books and authors.
 
 ## ERD Diagram  
 ![Database ERD](/db/ERD.png?raw=true "Database ERD")  
@@ -13,8 +13,7 @@ A simple api managing publishers books and authors.
     bundle install
     ```
 
-
-* Database configuration
+* Database configuration  
     You need to have installed and running the postgresql database  
 
     In order to connect to your local database  
@@ -23,12 +22,12 @@ A simple api managing publishers books and authors.
 * Database setup
     * Create the databases
     ```bash
-    `bin/rails db:create`  
+    bin/rails db:create  
     ```
     
     * Run migrations
     ```bash
-    `bin/rails db:migrate`  
+    bin/rails db:migrate  
     ```
 
 * Database initialization
