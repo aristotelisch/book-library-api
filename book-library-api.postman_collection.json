@@ -1,0 +1,430 @@
+{
+	"info": {
+		"_postman_id": "3efc3314-f446-4072-af9c-c293da03ef1a",
+		"name": "book-library-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Get all authors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/authors/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"authors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create author",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"first_name\": \"Telis\",\n\t\t\t\"last_name\": \"Christou\",\n\t\t\t\"email\": \"telischristou@gmail.com\",\n\t\t\t\"date_of_birth\": \"1981-08-19\"\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/authors/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"authors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update author (id 51)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"first_name\": \"Aristotelis!\",\n\t\t\t\"last_name\": \"Christou!\",\n\t\t\t\"email\": \"telischristou@hotmail.com\",\n\t\t\t\"date_of_birth\": \"2081-08-19\"\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/authors/51",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"authors",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Author (id 1) ",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/authors/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"authors",
+								"1"
+							]
+						},
+						"description": "This operation deletes also the author's associations (books)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Get all books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/books/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create book",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"title\": \"Test book title\",\n\t\t\t\"description\": \"Book description\",\n\t\t\t\"isbn\": \"1232312312\",\n\t\t\t\"visibility_status\": true,\n\t\t\t\"date_of_creation\": \"2000-08-20\",\n\t\t\t\"sorting\": 0,\n\t\t\t\"publisher_id\": 2,\n\t\t\t\"author_id\": 3\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/books/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book (id 51)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"title\": \"Test book title Updated\",\n\t\t\t\"description\": \"Book description\",\n\t\t\t\"isbn\": \"1232312312\",\n\t\t\t\"visibility_status\": true,\n\t\t\t\"date_of_creation\": \"2000-08-20\",\n\t\t\t\"sorting\": 0,\n\t\t\t\"publisher_id\": 2,\n\t\t\t\"author_id\": 3\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/books/51",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book (id 21)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/books/21",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books",
+								"21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publisher",
+			"item": [
+				{
+					"name": "Get all publishers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/publishers/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"publishers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Publisher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"name\": \"Oxford\",\n\t\t\t\"telephone\": \"003009999999\",\n\t\t\t\"address\": \"Sample Address\"\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/publishers/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"publishers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Publisher (id 4)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"name\": \"Oxford Updated\",\n\t\t\t\"telephone\": \"003009999999\",\n\t\t\t\"address\": \"Sample Address\"\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/publishers/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"publishers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Publisher (id 6)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/publishers/6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"publishers",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
