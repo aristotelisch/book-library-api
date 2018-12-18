@@ -16,9 +16,21 @@ class BooksController < ApplicationController
   def show; end
 
   def create
+    @book = Book.new(book_params)
+    byebug
+    @book.save!
+  rescue
+    render json: @book, status: :unprocessable_entity
   end
 
   def update
+    @book = Book.find(params[:id])
+    @book.update_attributes!(book_params)
+    render json: @book, status: :ok
+  rescue ActiveRecord::RecordNotFound
+    head :no_content
+  rescue
+    render json: @book, status: :unprocessable_entity
   end
 
   def destroy
@@ -38,6 +50,12 @@ class BooksController < ApplicationController
 
   def load_author
     @author = Author.find(params[:author_id])
+  end
+
+  def book_params
+    params.require(:data).require(:attributes)
+          .permit(:title, :description, :author_id, :publisher_id,
+                  :isbn, :visibility_status, :date_of_creation, :sorting)
   end
 
 end

@@ -32,14 +32,14 @@ class Book < ApplicationRecord
   end
 
   def author_date_of_birth
-      author.date_of_birth
+    author.date_of_birth
   end
 
   def publisher_name
-      publisher.name
+    publisher.name
   end
 
   def publisher_address
-      publisher.address
+    publisher.address
   end
 end

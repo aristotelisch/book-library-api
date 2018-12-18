@@ -8,9 +8,20 @@ class PublishersController < ApplicationController
   def show; end
 
   def create
+    @publisher = Publisher.new(publisher_params)
+    @publisher.save!
+  rescue
+    render json: @publisher, status: :unprocessable_entity
   end
 
   def update
+    @publisher = Publisher.find(params[:id])
+    @publisher.update_attributes!(publisher_params)
+    render json: @publisher, status: :ok
+  rescue ActiveRecord::RecordNotFound
+    head :no_content
+  rescue
+    render json: @publisher, status: :unprocessable_entity
   end
 
   def destroy
@@ -22,5 +33,10 @@ class PublishersController < ApplicationController
 
   def load_publisher
     @publisher = Publisher.find(params[:id])
+  end
+
+  def publisher_params
+    params.require(:data).require(:attributes)
+          .permit(:name, :telephone, :address)
   end
 end
