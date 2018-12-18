@@ -15,7 +15,11 @@ class Author < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :publishers, through: :books
 
-  validates :email, uniqueness: true, presence: true
+  validates :email, uniqueness: true, presence: true,
+                    format: {
+                      with: URI::MailTo::EMAIL_REGEXP,
+                      message: 'Only valid emails allowed'
+                    }
   validates :last_name, presence: true
 
   def full_name
