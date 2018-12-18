@@ -31,11 +31,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:3000/authors/",
+							"raw": "{{host}}/authors/",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"authors",
 								""
@@ -64,11 +63,10 @@
 							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"first_name\": \"Telis\",\n\t\t\t\"last_name\": \"Christou\",\n\t\t\t\"email\": \"telischristou@gmail.com\",\n\t\t\t\"date_of_birth\": \"1981-08-19\"\n\t\t}\n\t}\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/authors/",
+							"raw": "{{host}}/authors/",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"authors",
 								""
@@ -97,18 +95,77 @@
 							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"first_name\": \"Aristotelis!\",\n\t\t\t\"last_name\": \"Christou!\",\n\t\t\t\"email\": \"telischristou@hotmail.com\",\n\t\t\t\"date_of_birth\": \"2081-08-19\"\n\t\t}\n\t}\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/authors/51",
+							"raw": "{{host}}/authors/51",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"authors",
 								"51"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update author (id 51)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"first_name\": \"Aristotelis!\",\n\t\t\t\"last_name\": \"Christou!\",\n\t\t\t\"email\": \"telischristou@hotmail.com\",\n\t\t\t\"date_of_birth\": \"2081-08-19\"\n\t\t}\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{host}}/authors/51",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"authors",
+										"51"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8fbb447834c8b96105fd06d2fc44e2e0\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "2f839bc5-1e38-4959-8602-68cf3143b296"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.012566"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 51,\n    \"first_name\": \"Aristotelis!\",\n    \"last_name\": \"Christou!\",\n    \"email\": \"telischristou@hotmail.com\",\n    \"date_of_birth\": \"2081-08-19\",\n    \"created_at\": \"2018-12-17T22:28:01.137Z\",\n    \"updated_at\": \"2018-12-17T23:19:00.666Z\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete Author (id 1) ",
@@ -130,11 +187,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:3000/authors/1",
+							"raw": "{{host}}/authors/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"authors",
 								"1"
@@ -163,8 +219,8 @@
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
+								"type": "text",
+								"value": "application/json"
 							}
 						],
 						"body": {
@@ -172,11 +228,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:3000/books/",
+							"raw": "{{host}}/books/",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"books",
 								""
@@ -205,11 +260,10 @@
 							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"title\": \"Test book title\",\n\t\t\t\"description\": \"Book description\",\n\t\t\t\"isbn\": \"1232312312\",\n\t\t\t\"visibility_status\": true,\n\t\t\t\"date_of_creation\": \"2000-08-20\",\n\t\t\t\"sorting\": 0,\n\t\t\t\"publisher_id\": 2,\n\t\t\t\"author_id\": 3\n\t\t}\n\t}\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/books/",
+							"raw": "{{host}}/books/",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"books",
 								""
@@ -238,11 +292,10 @@
 							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"title\": \"Test book title Updated\",\n\t\t\t\"description\": \"Book description\",\n\t\t\t\"isbn\": \"1232312312\",\n\t\t\t\"visibility_status\": true,\n\t\t\t\"date_of_creation\": \"2000-08-20\",\n\t\t\t\"sorting\": 0,\n\t\t\t\"publisher_id\": 2,\n\t\t\t\"author_id\": 3\n\t\t}\n\t}\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/books/51",
+							"raw": "{{host}}/books/51",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"books",
 								"51"
@@ -271,11 +324,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:3000/books/21",
+							"raw": "{{host}}/books/21",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"books",
 								"21"
@@ -291,14 +343,11 @@
 			"item": [
 				{
 					"name": "Get all publishers",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "noauth"
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -312,11 +361,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:3000/publishers/",
+							"raw": "{{host}}/publishers/",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"publishers",
 								""
@@ -345,11 +393,10 @@
 							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"name\": \"Oxford\",\n\t\t\t\"telephone\": \"003009999999\",\n\t\t\t\"address\": \"Sample Address\"\n\t\t}\n\t}\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/publishers/",
+							"raw": "{{host}}/publishers/",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"publishers",
 								""
@@ -378,11 +425,10 @@
 							"raw": "{\n\t\"data\": {\n\t\t\"attributes\": {\n\t\t\t\"name\": \"Oxford Updated\",\n\t\t\t\"telephone\": \"003009999999\",\n\t\t\t\"address\": \"Sample Address\"\n\t\t}\n\t}\n}"
 						},
 						"url": {
-							"raw": "localhost:3000/publishers/4",
+							"raw": "{{host}}/publishers/4",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"publishers",
 								"4"
@@ -411,11 +457,10 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "localhost:3000/publishers/6",
+							"raw": "{{host}}/publishers/6",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "3000",
 							"path": [
 								"publishers",
 								"6"
