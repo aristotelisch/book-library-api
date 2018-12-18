@@ -14,4 +14,6 @@ class Publisher < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :authors, through: :books
 
+  validates :name, length: { minimum: 2 }, presence: true
+
 end

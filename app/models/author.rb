@@ -15,6 +15,9 @@ class Author < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :publishers, through: :books
 
+  validates :email, uniqueness: true, presence: true
+  validates :last_name, presence: true
+
   def full_name
     "#{first_name} #{last_name}"
   end

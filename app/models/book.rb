@@ -19,6 +19,8 @@ class Book < ApplicationRecord
   belongs_to :publisher
   belongs_to :author
 
+  validates :isbn, :title, presence: true, uniqueness: true
+
   def truncated_description
     description.length > 100 ? description[0, 100] + '...' : description
   end
