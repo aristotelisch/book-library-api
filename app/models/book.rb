@@ -25,6 +25,10 @@ class Book < ApplicationRecord
     description.length > 100 ? description[0, 100] + '...' : description
   end
 
+  def creation_date
+    creation_date.strftime('%d/%m/%Y')
+  end
+
   def author_full_name
     author.full_name
   end
@@ -34,7 +38,7 @@ class Book < ApplicationRecord
   end
 
   def author_date_of_birth
-    author.date_of_birth
+    author.date_of_birtha.strftime('%m of %B %Y')
   end
 
   def publisher_name
