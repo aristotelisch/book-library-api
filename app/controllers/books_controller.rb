@@ -17,7 +17,6 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
-    byebug
     @book.save!
   rescue
     render json: @book, status: :unprocessable_entity

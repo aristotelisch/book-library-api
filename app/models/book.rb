@@ -38,7 +38,7 @@ class Book < ApplicationRecord
   end
 
   def author_date_of_birth
-    author.date_of_birtha.strftime('%m of %B %Y')
+    author.date_of_birth.strftime('%m of %B %Y')
   end
 
   def publisher_name
