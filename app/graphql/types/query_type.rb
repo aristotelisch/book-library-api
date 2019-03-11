@@ -20,6 +20,7 @@ module Types
 
     def self.visible?(context)
       # check if user should access this endpoint
+      current_user = context[:current_user]
     end
 
   end
