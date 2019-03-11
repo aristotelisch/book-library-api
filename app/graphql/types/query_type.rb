@@ -7,7 +7,6 @@ module Types
     field :books, [Types::BookType], null: false,
       description: "All available books" do
 
-
       argument :id, ID, "Restrict books to id", required: false
     end
 
@@ -17,6 +16,10 @@ module Types
       else
         Book.includes(:author).all
       end
+    end
+
+    def self.visible?(context)
+      # check if user should access this endpoint
     end
 
   end
