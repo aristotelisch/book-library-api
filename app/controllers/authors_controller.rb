@@ -2,21 +2,21 @@ class AuthorsController < ApplicationController
   before_action :load_author, only: %i[show update destroy]
 
   def index
-    @authors = Author.includes(:books).all
+    authors = Author.includes(:books).all
+    @authors = AuthorDecorator.wrap(authors)
   end
 
-  def show
-  end
+  def show; end
 
   def create
-    @author = Author.new(author_params)
+    @author = AuthorDecorator.new(Author.new(author_params))
     @author.save!
   rescue
     render json: @author, status: :unprocessable_entity
   end
 
   def update
-    @author = Author.find(params[:id])
+    @author = AuthorDecorator.new(Author.find(params[:id]))
     @author.update_attributes!(author_params)
     render json: @author, status: :ok
   rescue ActiveRecord::RecordNotFound
@@ -33,7 +33,7 @@ class AuthorsController < ApplicationController
   private
 
   def load_author
-    @author = Author.find(params[:id])
+    @author = AuthorDecorator.new(Author.find(params[:id]))
   end
 
   def author_params
