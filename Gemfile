@@ -17,8 +17,15 @@ gem 'rails', '~> 5.2.2'
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 3.8'
   gem 'byebug', platforms: %I[mri mingw x64_mingw]
   gem 'pry-rails'
+end
+
+group :test do
+  gem "json_matchers"
 end
 
 group :development do
