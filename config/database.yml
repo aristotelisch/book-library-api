@@ -58,6 +58,9 @@ development:
 test:
   <<: *default
   database: book_library_api_test
+  username: <%= ENV['BOOK_LIBRARY_API_USR'] %>
+  password: <%= ENV['BOOK_LIBRARY_API_PSW'] %>
+  host: <%= ENV['BOOK_LIBRARY_API_PSQL_URL'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
