@@ -13,12 +13,13 @@ pipeline {
     stage('requirements') {
 
       steps {
-
         sh 'gem install bundler -v 2.0.1'
       }
     }
 
     stage('build') {
+
+      steps {
 
         sh 'bundle install'
         sh 'bundle exec rake db:migrate RAILS_ENV=test'

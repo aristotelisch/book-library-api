@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: book-library-api_development
+  database: book_library_api_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: book-library-api_production
+  database: book_library_api_production
   username: book-library-api
   password: <%= ENV['BOOK-LIBRARY-API_DATABASE_PASSWORD'] %>
